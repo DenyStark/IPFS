@@ -1,0 +1,27 @@
+html * {
+   	font-family: Helvetica Neue;
+   	font-size: 16;
+	font-weight: 300;
+	color: gray;
+}
+
+label {
+	font-size: 64;
+	font-weight: 500;
+	color: black;
+}
+
+input::placeholder {
+	font-weight: 200;
+	color: silver !important;
+}
+
+a {
+	font-weight: 200;
+	color: gray !important;
+}
+
+
+#form {
+	padding-top: 20%;
+}

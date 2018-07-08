@@ -1,0 +1,41 @@
+<!doctype>
+<html>
+
+<head>
+    <title>IPFS Database</title>
+    <link rel="stylesheet" type="text/css" href="./public/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="./ipfs/ipfs.js"></script>
+    <script type="text/javascript" src="./web3/web3.min.js"></script>
+    <script type="text/javascript" src="./public/js/server.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container" align="center">
+    <div class="form-group" id="form">
+        <label for="url">Load new file</label>
+        <input type="url" class="form-control col-10" id="url" aria-describedby="emailHelp" placeholder="https://ethereum.org/images/wallpaper-homestead.jpg"><br>
+        <a id="status" href="">Enter a link to file you want to save.</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('#form').each(function() {
+            $(this).find('input').keypress(function(e) {
+                if(e.which == 10 || e.which == 13) {
+                    let url = this.value;
+                    $('#status').html("");
+                    this.value = '';
+                    storeContent(url);
+                }
+            });
+
+            $(this).find('input[type=submit]').hide();
+        });
+    });
+</script>
+
+</body>
